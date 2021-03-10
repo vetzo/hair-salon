@@ -1,0 +1,26 @@
+.b-working-hours {
+	.title {
+		color: $white;
+	}
+
+
+		.dateTime {
+		  width: 100%;
+		  margin: 0 auto;
+		  border-bottom: 1px dashed $primary;
+
+		  &:last-child {
+		  	border-bottom-color: transparent;
+		  }
+		}
+
+		.day {
+		  display: inline-block;
+		  float: left;
+		}
+
+		.time {
+		  display: inline-block;
+		  float: right
+		}
+}

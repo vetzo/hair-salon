@@ -1,0 +1,66 @@
+/**
+ *
+ * Mobile First
+ *
+ */
+
+@mixin mobile-up {
+  @include media-breakpoint-up(sm) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @include media-breakpoint-up(md) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @include media-breakpoint-up(lg) {
+    @content;
+  }
+}
+
+@mixin desktop-md-up {
+  @include media-breakpoint-up(xl) {
+    @content;
+  }
+}
+
+
+/**
+ *
+ * Desktop First
+ *
+ */
+
+@mixin desktop-md-down {
+  @include media-breakpoint-down(xl) {
+    @content;
+  }
+}
+
+@mixin desktop-down {
+  @include media-breakpoint-down(lg) {
+    @content;
+  }
+}
+
+@mixin tablet-down {
+  @include media-breakpoint-down(md) {
+    @content;
+  }
+}
+
+@mixin mobile-down {
+  @include media-breakpoint-down(sm) {
+    @content;
+  }
+}
+
+@mixin mobile-small-down {
+  @include media-breakpoint-down(xs) {
+    @content;
+  }
+}
