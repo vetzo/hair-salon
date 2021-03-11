@@ -1,0 +1,12 @@
+.b-team-members {
+	text-align: center;
+
+	.name {
+		font-family: $font-family-sans-serif;
+	}
+
+	.position {
+		color: $primary;
+		font-weight: 700;
+	}
+}

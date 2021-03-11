@@ -5,7 +5,7 @@ use Carbon_Fields\Container;
 
 
 Block::make( __( 'Team members-sabaaf' ) )
-    ->add_tab( __('Title'), sabaaf_title() )
+    ->add_tab( __('Title'), sabaaf_section_header() )
     ->add_tab( __('Team members'), sabaaf_team_members() )
     ->set_preview_mode( true )
     ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
