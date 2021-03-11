@@ -12,3 +12,10 @@ function sabaaf_text( $field_name = 'text', $label = 'Text') {
         Field::make( 'rich_text', $field_name , $label ),
     ); 
 }
+
+
+function sabaaf_simple_text( $field_name = 'text', $label = 'Text') {
+    return array(
+        Field::make( 'text', $field_name , $label ),
+    ); 
+}

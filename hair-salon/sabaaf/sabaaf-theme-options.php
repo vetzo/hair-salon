@@ -34,11 +34,15 @@ function sabaaf_attach_theme_options() {
 }
 
 
-add_action( 'carbon_fields_register_fields', 'sabaaf_slides_cpt_cf' );
-function sabaaf_slides_cpt_cf() {
+add_action( 'carbon_fields_register_fields', 'sabaaf_cpt_cf' );
+function sabaaf_cpt_cf() {
 
 	Container::make( 'post_meta', 'Slide Data' )
 	    ->where( 'post_type', '=', 'sabaaf-slides' )
 	    ->add_tab( __('Section header'), sabaaf_section_header() )
 	    ->add_tab( __('Buttons'), sabaaf_buttons() );
+
+	Container::make( 'post_meta', 'Team member Data' )
+	    ->where( 'post_type', '=', 'sabaaf-team-member' )
+	    ->add_tab( __('Position'), sabaaf_simple_text('position', 'Position') );
 }
