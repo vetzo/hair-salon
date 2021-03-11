@@ -42,7 +42,7 @@ html, body {
 		transform: translateY(70%);
 		position: relative;
 		z-index: 1;
-
+		color: $primary;
 
 		@include mobile-down {
 			font-size: 32px;
