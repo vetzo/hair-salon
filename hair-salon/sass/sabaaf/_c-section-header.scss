@@ -1,0 +1,32 @@
+.c-section-header {
+  .title,
+  .subtitle {
+    font-family: $font-family-sans-serif;
+    color: $secondary;
+  }
+
+  .tagline {
+    font-size: 48px;
+    position: relative;
+    z-index: 1;
+    color: $primary;
+    margin-bottom: -28px;
+
+    @include mobile-down {
+      font-size: 32px;
+      margin-bottom: -18px;
+    }
+  }
+
+  .title {
+    font-weight: bold;
+    font-size: 58px;
+    line-height: 1.1;
+    position: relative;
+    z-index: 2;
+
+    @include mobile-down {
+      font-size: 36px;
+    }
+  }
+}

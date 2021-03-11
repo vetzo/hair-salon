@@ -18,7 +18,7 @@ add_action( 'wp_head', function  () {
 
         //alert("Livereload yo");
     
-        var picostrap_livereload_timeout=1500;
+        var picostrap_livereload_timeout=3000;
         
         function picostrap_livereload_woodpecker(){
             //console.log("picostrap_livereload_woodpecker start");
@@ -120,22 +120,35 @@ add_action("admin_init", function (){
 //FUNCTION TO MAKE A TIMESTAMP OF CHILD THEME SASS DIRECTORY
 function picostrap_get_scss_last_filesmod_timestamp() {
 
-	//get current sass folder directory listing
 	$the_directory=WP_CONTENT_DIR.'/themes/'.get_stylesheet().'/sass/';
+    $the_directory_sabaaf=WP_CONTENT_DIR.'/themes/'.get_stylesheet().'/sass/sabaaf/';
+    
     $files_listing = scandir($the_directory, 1);
+    $files_listing_sabbaf = scandir($the_directory_sabaaf, 1);
+
     
     if (!$files_listing) die("<div id='compile-error' style='font-size:20px;background:#212337;color:lime;font-family:courier;border:8px solid red;padding:15px;display:block'> Cannot find SASS folder. Are you sure child theme name is coherent with folder name? </div>");
-	
-    $mod_time_total=0;
-	foreach($files_listing as $file_name):
-		if ((strpos($file_name, '.scss') !== false) or (strpos($file_name, '.css') !== false)):
-			//echo $file_name."<br>";
-			$file_stats = stat( $the_directory. $file_name );
-			$mod_time_total+= $file_stats['mtime'];
-		endif;
-	endforeach;
+    
+    $max=0;
+    foreach($files_listing as $file_name):
+        if ((strpos($file_name, '.scss') !== false) or (strpos($file_name, '.css') !== false)):
+            $file_stats = stat( $the_directory. $file_name );
 
-	return $mod_time_total; 
+            if($file_stats['mtime'] > $max)
+                $max = $file_stats['mtime'];
+        endif;
+    endforeach;
+
+    foreach($files_listing_sabbaf as $file_name):
+        if ((strpos($file_name, '.scss') !== false) or (strpos($file_name, '.css') !== false)):
+            $file_stats = stat( $the_directory_sabaaf. $file_name );
+
+            if($file_stats['mtime'] > $max)
+                $max = $file_stats['mtime'];
+        endif;
+    endforeach;
+
+    return $max; 
 }
  
 //FUTURE
