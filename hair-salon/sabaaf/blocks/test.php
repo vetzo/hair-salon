@@ -13,7 +13,7 @@ Block::make( __( 'My Shiny Gutenberg Block' ) )
     ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
 
         get_template_part(
-            'inc/sabaaf/blocks/templates/block',
+            'sabaaf/blocks/templates/block',
             'test',
             array(
                 'fields'   => $fields,

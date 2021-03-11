@@ -18,7 +18,7 @@ Block::make( __( 'Working hours-sabaaf' ) )
     ->set_preview_mode( true )
     ->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
         get_template_part(
-            'inc/sabaaf/blocks/templates/block',
+            'sabaaf/blocks/templates/block',
             'working-hours',
             array(
                 'fields'   => $fields,

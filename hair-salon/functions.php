@@ -40,7 +40,7 @@ $sabaaf_includes = array(
 	'blocks.php'
 );
 foreach ( $sabaaf_includes as $file ) {
-	require_once get_template_directory() . '/inc/sabaaf/sabaaf-' . $file;
+	require_once get_template_directory() . '/sabaaf/sabaaf-' . $file;
 }
 
 //PURELY OPT-IN FEATURES

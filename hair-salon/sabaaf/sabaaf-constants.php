@@ -2,7 +2,7 @@
 // Sometimes Antisocial But Always Anti-Fascist
 defined( 'ABSPATH' ) || exit;
 
-define("THEME_NAME", "Attorney at law");
+define("THEME_NAME", "Hair salon");
 
 function sabaaf_main_options_info_html() {
 $theme_name = THEME_NAME;
