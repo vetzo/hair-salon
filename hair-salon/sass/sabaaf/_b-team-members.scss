@@ -1,6 +1,17 @@
 .b-team-members {
 	text-align: center;
 
+	.team-member {
+		backface-visibility: hidden;  
+		transition: 0.5s all ease-in-out;
+		transform: translateZ(0);
+		-webkit-font-smoothing: subpixel-antialiased;
+
+		&:hover {
+	        transform: scale(1.1)  translateZ(0);
+		}
+	}
+
 	.name {
 		font-family: $font-family-sans-serif;
 	}

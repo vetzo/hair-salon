@@ -9,6 +9,21 @@ html, body {
 	#logo-tagline-wrap {
 		width: 266px;
 	}
+
+	.nav-item {
+		@include desktop-up() {
+			padding-left: 25px;
+			padding-right: 25px;
+			
+			.dropdown-menu { 
+				display: none; 
+			}
+
+			&:hover .dropdown-menu{ 
+				display: block; 
+			}
+		}
+	}
 }
 
 .c-background {
